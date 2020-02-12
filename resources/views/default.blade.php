@@ -16,7 +16,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url('pronostic') }}">Pronostic <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link" href="{{ url('analyse')}}">Analyse</a>
                 </li>
                 <li class="nav-item">
@@ -38,10 +38,11 @@
 <div class="container" style="padding-top:20px ">
     @yield('content')
 </div>
+
+<script src="//code.jquery.com/jquery.js"></script>
+@include('flashy::message')
 </body>
 
 </html>
-
-
 
 

@@ -1,4 +1,5 @@
 <?php
+use App\Mail\demandeCreated;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,8 +11,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'HomeController@pageHome');
+Route::get('/', [
+    'as' => 'root_path',
+    'uses' => 'HomeController@pageHome'
+]);
 
 Route::get('/pronostic', 'PronosticController@pageProno');
 
@@ -28,3 +31,9 @@ Route::post('/contact', [
     'as' => 'contact_path',
     'uses' => 'ContactController@store'
 ]);
+
+Route::get('/test-email', function(){
+    return new demandeCreated('Guillaume', 'guillaume@guillaume', 'testtesttesttesttest');
+
+});
+
