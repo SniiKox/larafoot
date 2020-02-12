@@ -12,7 +12,19 @@
 */
 
 Route::get('/', 'HomeController@pageHome');
-Route::get('/contact', 'ContactController@pageContact');
+
 Route::get('/pronostic', 'PronosticController@pageProno');
+
 Route::get('/resultat', 'ResultatController@pageResultat');
+
 Route::get('/analyse', 'AnalyseController@pageAnalyse');
+
+Route::get('/contact', [
+    'as' => 'contact_path',
+    'uses' => 'ContactController@pageContact'
+]);
+
+Route::post('/contact', [
+    'as' => 'contact_path',
+    'uses' => 'ContactController@store'
+]);

@@ -35,7 +35,7 @@
 </header>
 
 <body>
-<div class="container">
+<div class="container" style="padding-top:20px ">
     @yield('content')
 </div>
 </body>
