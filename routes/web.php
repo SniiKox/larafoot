@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@pageHome');
+Route::get('/contact', 'ContactController@pageContact');
+Route::get('/pronostic', 'PronosticController@pageProno');
+Route::get('/resultat', 'ResultatController@pageResultat');
+Route::get('/analyse', 'AnalyseController@pageAnalyse');
