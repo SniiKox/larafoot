@@ -1,1 +1,6 @@
-<h1> Page de resultat </h1>
+@extends('default')
+
+@section('content')
+    <h1> Page de resultat </h1>
+@endsection
+
