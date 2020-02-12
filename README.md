@@ -6,6 +6,7 @@
 
 + Laravel 6.1
 + Blade
++ Bootstrap 4
 
 ## A venir
 
