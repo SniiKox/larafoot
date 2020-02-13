@@ -49,6 +49,10 @@ body{
     color: white;
     padding: 50px;
 }
+
+.bloc-banner p {
+    color : white;
+}
 button{
     background-color: #fcdb00;
     border: 0;
@@ -138,4 +142,8 @@ p{
 }
 .row{
     margin-top: 10%;
+}
+
+#teamExpert{
+    position: absolute;
 }

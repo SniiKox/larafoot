@@ -10,7 +10,7 @@
         <p>• +60% de votre bankroll en 2 mois</p>
         <p>• Conseil personnalisé</p>
         <p>• Ne vivez que grâce à votre passion</p>
-        <a target="_blank" href="https://www.facebook.com/Win-prono-foot-461594870623631/?__tn__=%2Cd%2CP-R&eid=ARC-l7m3KZpCWxhOhpNkTekS9e-zZh52HwblTEV5Y-i2ZAdV1EGDTpfm__tvpjGWuDIRyq-Rvq-jYQBt">
+        <a target="_blank" href="https://www.facebook.com/Win-prono-foot-461594870623631/">
             <button>Suivez-nous !</button>
         </a>
     </div>
