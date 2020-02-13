@@ -132,3 +132,10 @@ p{
     color: white;
     margin-top: 40px;
 }
+.btn-primary{
+    background-color: #304578;
+    border-color: #2e4477;
+}
+.row{
+    margin-top: 10%;
+}
