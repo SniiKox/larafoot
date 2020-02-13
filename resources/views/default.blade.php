@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 
 <header>
@@ -26,21 +27,21 @@
                     <a class="nav-link" href="{{ url('contact')}}">Contact</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            </form> -->
         </div>
     </nav>
 </header>
 
 <body>
-<div class="container" style="padding-top:20px ">
+
     @yield('content')
-</div>
 
 <script src="//code.jquery.com/jquery.js"></script>
 @include('flashy::message')
+
 </body>
 
 </html>
