@@ -12,8 +12,8 @@
     <img class="banner" src="img/larafoot-equipe.jpg">
     <div class="explain">
         <h2>Grâce à nous, vous pourrez :</h2>
-        <button>Pronostic</button>
-        <button>Analyse</button>
-        <button>Résultat</button>
+        <a href="{{ url('/pronostic') }}"><button>Pronostic</button>
+        <a href="{{ url('/analyse') }}"><button>Analyse</button>
+        <a href="{{ url('/resultat') }}"><button>Résultat</button>
     </div>
 @endsection

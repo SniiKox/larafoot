@@ -6,7 +6,7 @@
             <div class="title-analyse">Analyse</div>
             <p>Retrouvez toutes les analyses de votre équipe !</p>
             <p>En partenariat avec RMC SPORT</p>
-            <button>Rejoignez-nous</button>
+            <a href="https://www.rmcsport.tv/" target="_blank"> <button>En savoir plus</button> </a>
         </div>
         <img class="bloc-txt" src="img/analyse.jpg">
     </div>
