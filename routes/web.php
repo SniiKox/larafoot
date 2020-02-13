@@ -16,11 +16,30 @@ Route::get('/', [
     'uses' => 'HomeController@pageHome'
 ]);
 
-Route::get('/pronostic', 'PronosticController@pageProno');
+Route::get('/pronostic', [
+    'as' => 'pronostic_path',
+    'uses' => 'PronosticController@pageProno'
+]);
 
-Route::get('/resultat', 'ResultatController@pageResultat');
+Route::get('/resultat', [
+    'as' => 'resultat_path',
+    'uses' => 'ResultatController@pageResultat'
+]);
 
-Route::get('/analyse', 'AnalyseController@pageAnalyse');
+Route::get('/analyse', [
+    'as' => 'analyse_path',
+    'uses' => 'AnalyseController@pageAnalyse'
+]);
+
+Route::get('/score', [
+    'as' => 'score_path',
+    'uses' => 'ScoreController@pageScore'
+]);
+
+Route::get('/championnat', [
+    'as' => 'championnat_path',
+    'uses' => 'ChampionnatController@pageChampionnat'
+]);
 
 Route::get('/contact', [
     'as' => 'contact_path',
@@ -33,7 +52,7 @@ Route::post('/contact', [
 ]);
 
 Route::get('/test-email', function(){
-    return new demandeCreated('Guillaume', 'guillaume@guillaume', 'testtesttesttesttest');
+    return new demandeCreated('Guillaume', 'guillaume@guillaume', 'coucou je suis un message de plus de 15 caractères');
 
 });
 

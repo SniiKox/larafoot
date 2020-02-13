@@ -6,7 +6,7 @@
             <h1>BIENVENUE SUR LARAFOOT</h1>
             <p>Consulter les résultats, les pronostiques et bien plus.</p>
             <a href="#teamExpert">
-                <button>En savoir plus</button>
+                <button>Voir l'équipe</button>
             </a>
         </div>
         <img class="banner-img" src="img/stade.jpg">
@@ -15,8 +15,8 @@
     <img class="banner" src="img/larafoot-equipe.jpg">
     <div class="explain">
         <h2>Grâce à nous, vous pourrez :</h2>
-        <a href="{{ url('/pronostic') }}"><button>Pronostic</button>
-        <a href="{{ url('/analyse') }}"><button>Analyse</button>
-        <a href="{{ url('/resultat') }}"><button>Résultat</button>
+        <a href="{{ route('pronostic_path') }}"><button>Pronostiquer</button></a>
+        <a href="{{ route('analyse_path') }}"><button>Analyser</button></a>
+        <a href="{{ route('resultat_path') }}"><button>Consulter les résultats</button></a>
     </div>
 @endsection

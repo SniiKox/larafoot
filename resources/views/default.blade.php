@@ -5,8 +5,6 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -16,19 +14,25 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="{{ url('/')}}">LaraFoot</a>
+            <a class="navbar-brand" href="{{ route('root_path')}}">LaraFoot</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('pronostic') }}">Pronostic <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('pronostic_path') }}">Pronostic <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('analyse')}}">Analyse</a>
+                    <a class="nav-link" href="{{ route('analyse_path')}}">Analyse</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('resultat')}}">Résultat</a>
+                    <a class="nav-link" href="{{ route('resultat_path')}}">Résultat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('contact')}}">Contact</a>
+                    <a class="nav-link" href="{{ route('contact_path')}}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('championnat_path')}}">Championnat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('score_path')}}">Score</a>
                 </li>
             </ul>
             <!-- <form class="form-inline my-2 my-lg-0">
