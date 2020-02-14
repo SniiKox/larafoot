@@ -15,6 +15,6 @@ La relation avec une BDD et l'incorporation d'un ORM !!
 
 ## Produit par
 
-+ CHARPENTIER Guillaume
-+ FOURRIER Clément
-+ HUCHET Adrien
++ CHARPENTIER Guillaume - SniiKox
++ FOURRIER Clément - fourrierc
++ HUCHET Adrien - adrienhuchet
