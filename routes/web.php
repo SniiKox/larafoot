@@ -36,9 +36,18 @@ Route::get('/score', [
     'uses' => 'ScoreController@pageScore'
 ]);
 
-Route::get('/championnat', [
-    'as' => 'championnat_path',
-    'uses' => 'ChampionnatController@pageChampionnat'
+Route::resource('championnats','ChampionnatController');
+
+Route::resource('championnats', 'ChampionnatController', [
+    'names' => [
+        'index' => 'championnats.index',
+        'create' => 'championnats.create',
+        'store' => 'championnats.store',
+        'show' => 'championnats.show',
+        'edit' => 'championnats.edit',
+        'update' => 'championnats.update',
+        'destroy' => 'championnats.destroy',
+    ]
 ]);
 
 Route::get('/contact', [

@@ -29,7 +29,7 @@
                     <a class="nav-link" href="{{ route('contact_path')}}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('championnat_path')}}">Championnat</a>
+                    <a class="nav-link" href="{{ route('championnats.index')}}">Championnat</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('score_path')}}">Score</a>
