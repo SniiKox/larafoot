@@ -1,49 +1,50 @@
 @extends('default')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Editer Championnat</h2>
-            </div>
+
+<div class = "row">
+
+        <div style="text-align : center; width: 100%;">
+            <h2 class="pading-top"> Modifier un championnat </h2>
+        </div>
+
+        <div class ="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin: auto">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form action="{{ route('championnats.update',$championnat->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+
+                <div class="form-group">
+                    <label for="libelle"> Nom du championnat</label>
+                    <input type="text" name="libelle" id="libelle" required="required" class="form-control" placeholder="Le nom..." value="{{ old('libelle') }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="pays"> Pays de la ligue</label>
+                    <input type="text" name="pays" id="pays" required="required" class="form-control" placeholder="Le pays..." value="{{ old('pays') }}">
+                </div>
+
+                <div class="form-group">
+                    <button type ="submit" class="btn btn-primary btn-block">Créer &raquo; </button>
+                </div>
+
+            </form>
+
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('championnats.index') }}"> Back</a>
+                    <a class="btn" href="{{ route('championnats.index') }}"> Retour</a>
             </div>
-        </div>
-    </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <form action="{{ route('championnats.update',$championnat->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>libelle:</strong>
-                    <input type="text" name="libelle" value="{{ $championnat->libelle }}" class="form-control" placeholder="libele">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>pays:</strong>
-                    <input type="text" name="pays" value="{{ $championnat->pays }}" class="form-control" placeholder="pays">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
         </div>
 
-    </form>
 @endsection

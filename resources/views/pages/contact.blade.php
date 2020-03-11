@@ -15,7 +15,7 @@
 
             <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label for="name" class="control-label">Nom</label>
-            <input type="text" name="name" id="name" class="form-control" required="required" placeholder="Votre nom..." value="{{ old('name') }}">
+                <input type="text" name="name" id="name" class="form-control" required="required" placeholder="Votre nom..." value="{{ old('name') }}">
                 {!! $errors->first('name', '<span class="help-block"> :message </span>') !!}
             </div>
 

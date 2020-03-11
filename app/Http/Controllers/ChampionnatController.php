@@ -45,8 +45,9 @@ class ChampionnatController extends Controller
 
         Championnat::create($request->all());
 
-        return redirect()->route('championnats.index')
-            ->with('success','championnat created successfully.');
+        flashy('Le championnat a été ajouté avec succès !');
+
+        return redirect()->route('championnats.index');
     }
 
     /**
@@ -87,8 +88,9 @@ class ChampionnatController extends Controller
 
         $championnat->update($request->all());
 
-        return redirect()->route('championnats.index')
-            ->with('success','championnat updated successfully');
+        flashy('Le championnat a été modifié avec succès !');
+
+        return redirect()->route('championnats.index');
     }
 
     /**
@@ -101,7 +103,8 @@ class ChampionnatController extends Controller
     {
         $championnat->delete();
 
-        return redirect()->route('championnats.index')
-            ->with('success','championnat deleted successfully');
+        flashy('Le championnat a été supprimé avec succès !');
+
+        return redirect()->route('championnats.index');
     }
 }
