@@ -32,7 +32,7 @@
             </div>
 
                 <div class="form-group">
-                        <button type ="submit" class="btn btn-primary btn-block">Envoyez &raquo; </button>
+                        <button type ="submit" class="btn btn-primary btn-block">Envoyez</button>
                 </div>
 
             </form>
