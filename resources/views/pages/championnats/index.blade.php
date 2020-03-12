@@ -12,8 +12,10 @@
 
 
             @if (!Auth::guest() && Auth::user()->admin)
-                <div class="pull-right">
-                    <a style="background-color: #fcdb00; color : #20396f; border:none;" class="btn btn-success" href="{{ route('championnats.create') }}"> Ajouter un championnat</a>
+                <div class="pull-right" style="padding-bottom : 10px;">
+                    <a href="{{ route('championnats.create') }}">
+                        <button> Ajouter un championnat </button>
+                    </a>
                 </div>
             @endif
 
