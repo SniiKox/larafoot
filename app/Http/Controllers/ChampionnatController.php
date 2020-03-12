@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class ChampionnatController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('admin')->only('create','edit','delete');
+    }
+
+
     /**
      * Display a listing of the resource.
      *

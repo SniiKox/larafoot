@@ -66,6 +66,7 @@ Route::get('/test-email', function(){
 });
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
