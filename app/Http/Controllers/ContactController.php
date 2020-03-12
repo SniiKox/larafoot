@@ -11,6 +11,7 @@ class ContactController extends Controller
 {
     public function pageContact()
     {
+        flashy('Merci ! Nous vous répondrons dans les plus brefs délais');
         return view('pages/contact');
     }
 
