@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+
+    public function pageHome(){
+        return view('pages/homepage');
+    }
+
+
     /**
      * Create a new controller instance.
      *
