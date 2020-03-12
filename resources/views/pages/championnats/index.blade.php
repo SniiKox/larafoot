@@ -10,9 +10,13 @@
 
     <div class ="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin: auto">
 
-        <div class="pull-right">
-            <a style="background-color: #fcdb00; color : #20396f; border:none;" class="btn btn-success" href="{{ route('championnats.create') }}"> Ajouter un championnat</a>
-        </div>
+
+            @if (!Auth::guest() && Auth::user()->admin)
+                <div class="pull-right">
+                    <a style="background-color: #fcdb00; color : #20396f; border:none;" class="btn btn-success" href="{{ route('championnats.create') }}"> Ajouter un championnat</a>
+                </div>
+            @endif
+
 
         <table class="table table-bordered">
             <tr>
@@ -24,20 +28,25 @@
                 <tr>
                     <td>{{ $championnat->libelle }}</td>
                     <td>{{ $championnat->pays }}</td>
-                    <td>
-                    <form action="{{ route('championnats.destroy',$championnat->id) }}" method="POST">
-                        {{-- <a class="btn btn-info" href="{{ route('championnats.show',$championnat->id) }}">Afficher</a> --}}
-                        <a class="btn btn-primary" href="{{ route('championnats.edit',$championnat->id) }}">Modifier</a>
-                                 @csrf
-                                 @method('DELETE')
+                    @if (!Auth::guest() && Auth::user()->admin)
+                        <td>
+                            <form action="{{ route('championnats.destroy',$championnat->id) }}" method="POST">
+                                {{-- <a class="btn btn-info" href="{{ route('championnats.show',$championnat->id) }}">Afficher</a> --}}
+                                <a class="btn btn-primary" href="{{ route('championnats.edit',$championnat->id) }}">Modifier</a>
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Supprimer</button>
-                        </form>
-                    </td>
+                            </form>
+                        </td>
+                    @else
+                        <td>Aucune action possible</td>
+                    @endif
                     </tr>
                 @endforeach
         </table>
     </div>
 
     {!! $championnats->links() !!}
+</div>
 
 @endsection

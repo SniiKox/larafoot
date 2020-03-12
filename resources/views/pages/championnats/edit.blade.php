@@ -27,12 +27,12 @@
 
                 <div class="form-group">
                     <label for="libelle"> Nom du championnat</label>
-                    <input type="text" name="libelle" id="libelle" required="required" class="form-control" placeholder="Le nom..." value="{{ old('libelle') }}">
+                    <input type="text" name="libelle" id="libelle" required="required" class="form-control" placeholder="Le nom..." value="{{ $championnat->libelle }}">
                 </div>
 
                 <div class="form-group">
                     <label for="pays"> Pays de la ligue</label>
-                    <input type="text" name="pays" id="pays" required="required" class="form-control" placeholder="Le pays..." value="{{ old('pays') }}">
+                    <input type="text" name="pays" id="pays" required="required" class="form-control" placeholder="Le pays..." value="{{ $championnat->pays }}">
                 </div>
 
                 <div class="form-group">

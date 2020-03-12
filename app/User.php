@@ -30,7 +30,7 @@ class User extends Authenticatable
 
 
     public function isRole(){
-        return $this->role;
+        return $this->admin;
     }
 
     /**

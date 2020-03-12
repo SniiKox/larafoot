@@ -28,8 +28,9 @@ class ChampionnatController extends Controller
     {
         $championnats = Championnat::latest()->paginate(20);
 
-        return view('championnats.index',compact('championnats'))
+        return view('pages.championnats.index',compact('championnats'))
             ->with('i', (request()->input('page', 1) - 1) * 20);
+
     }
 
     /**
@@ -39,7 +40,7 @@ class ChampionnatController extends Controller
      */
     public function create()
     {
-        return view('championnats.create');
+        return view('pages.championnats.create');
     }
 
     /**
@@ -70,7 +71,7 @@ class ChampionnatController extends Controller
      */
     public function show(Championnat $championnat)
     {
-        return view('championnats.show',compact('championnat'));
+        return view('pages.championnats.show',compact('championnat'));
     }
 
     /**
@@ -81,7 +82,7 @@ class ChampionnatController extends Controller
      */
     public function edit(Championnat $championnat)
     {
-        return view('championnats.edit',compact('championnat'));
+        return view('pages.championnats.edit',compact('championnat'));
     }
 
     /**
