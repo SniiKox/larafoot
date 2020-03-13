@@ -29,12 +29,23 @@
                 <input type="text" name="libelle" id="libelle" required="required" class="form-control" placeholder="Le nom..." value="{{ old('libelle') }}">
             </div>
 
+            <div class="field">
+                <label class="label">Catégorie</label>
+                <div class="select">
+                    <select name="championnat_id">
+                        @foreach($championnats as $championnat)
+                            <option value="{{ $championnat->id }}">{{ $championnat->libelle }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
 
             <div class="form-group">
                 <button type ="submit" class="btn btn-primary btn-block">Créer</button>
             </div>
 
         </form>
+
 
         <div class="pull-right">
                 <a class="btn" href="{{ route('equipes.index') }}"> Retour</a>

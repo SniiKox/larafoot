@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\championnat;
 use App\Equipe;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,8 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        return view('pages.equipes.create');
+        $championnats = championnat::all();
+        return view('pages.equipes.create', compact('championnats'));
     }
 
     /**
@@ -56,7 +58,7 @@ class EquipeController extends Controller
 
         Equipe::create($request->all());
 
-        flashy('Le championnat a été ajouté avec succès !');
+        flashy('L\'équipe a été ajoutée avec succès !');
 
         return redirect()->route('equipes.index');
     }
@@ -81,7 +83,8 @@ class EquipeController extends Controller
      */
     public function edit(Equipe $equipe)
     {
-        return view('pages.equipes.edit',compact('equipe'));
+        $championnats = championnat::all();
+        return view('pages.equipes.edit', compact('equipe', 'championnats'));
     }
 
     /**
@@ -100,7 +103,7 @@ class EquipeController extends Controller
 
         $equipe->update($request->all());
 
-        flashy('Le championnat a été modifié avec succès !');
+        flashy('L\'équipe a été modifiée avec succès !');
 
         return redirect()->route('equipes.index');
     }
@@ -115,7 +118,7 @@ class EquipeController extends Controller
     {
         $equipe->delete();
 
-        flashy('Le championnat a été supprimé avec succès !');
+        flashy('L\'équipe a été supprimée avec succès !');
 
         return redirect()->route('equipes.index');
     }

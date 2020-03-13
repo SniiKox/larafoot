@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type ="submit" class="btn btn-primary btn-block">Créer &raquo; </button>
+                    <button type ="submit" class="btn btn-primary btn-block">Modifier &raquo; </button>
                 </div>
 
             </form>
