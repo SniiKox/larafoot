@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class championnat extends Model
 {
     /**
-     * The attributes that are mass assignable.
+     * Permet de noter les attributs que l'on souhaite utilisé
+     * plutot que de récupéré toute la table
      *
      * @var array
      */

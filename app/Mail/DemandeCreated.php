@@ -16,7 +16,7 @@ class DemandeCreated extends Mailable
     public $msg;
 
     /**
-     * Create a new message instance.
+     * Récupération des variables présente dans l'email
      *
      * @return void
      */
@@ -28,7 +28,7 @@ class DemandeCreated extends Mailable
     }
 
     /**
-     * Build the message.
+     * Template de l'email
      *
      * @return $this
      */

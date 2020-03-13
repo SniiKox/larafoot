@@ -5,14 +5,12 @@ use Illuminate\Database\Seeder;
 class UsersTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Demarrer les seeders
      *
      * @return void
      */
     public function run()
     {
-
         factory(App\championnat::class, 10)->create();
-
     }
 }
