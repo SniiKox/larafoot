@@ -14,4 +14,9 @@ class championnat extends Model
     protected $fillable = [
         'libelle', 'pays',
     ];
+
+    public function equipes()
+    {
+        return $this->hasMany(Equipe::class);
+    }
 }

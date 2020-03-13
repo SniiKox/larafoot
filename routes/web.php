@@ -36,7 +36,6 @@ Route::get('/score', [
     'uses' => 'ScoreController@pageScore'
 ]);
 
-Route::resource('championnats','ChampionnatController');
 
 Route::resource('championnats', 'ChampionnatController', [
     'names' => [
@@ -47,6 +46,18 @@ Route::resource('championnats', 'ChampionnatController', [
         'edit' => 'championnats.edit',
         'update' => 'championnats.update',
         'destroy' => 'championnats.destroy',
+    ]
+]);
+
+Route::resource('equipes', 'EquipeController', [
+    'names' => [
+        'index' => 'equipes.index',
+        'create' => 'equipes.create',
+        'store' => 'equipes.store',
+        'show' => 'equipes.show',
+        'edit' => 'equipes.edit',
+        'update' => 'equipes.update',
+        'destroy' => 'equipes.destroy',
     ]
 ]);
 

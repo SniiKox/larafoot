@@ -35,6 +35,9 @@
                     <a class="nav-link" href="{{ route('championnats.index')}}">Championnat</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('equipes.index')}}">Equipe</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('score_path')}}">Score</a>
                 </li>
             </ul>
