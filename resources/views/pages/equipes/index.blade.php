@@ -48,7 +48,6 @@
         </table>
     </div>
 
-    {!! $equipes->links() !!}
 </div>
 
 @endsection

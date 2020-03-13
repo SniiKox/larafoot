@@ -11,6 +11,14 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\championnat::class, 10)->create();
+        factory(App\championnat::class, 10)->create()->each(function ($championnat){
+
+            factory(App\Equipe::class, 5)->create()->each(function ($equipe) use ($championnat){
+
+                $championnat->equipes()->save($equipe);
+
+            });
+        });
+
     }
 }

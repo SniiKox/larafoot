@@ -30,17 +30,15 @@
                     <input type="text" name="libelle" id="libelle" required="required" class="form-control" placeholder="Le nom..." value="{{ $equipe->libelle }}">
                 </div>
 
-                <div class="field">
-                    <label class="label">Catégorie</label>
-                    <div class="select">
-                        <select name="championnat_id">
-                            @foreach($championnats as $championnat)
+                <div class="form-group">
+                    <label for="libelle"> Championnat</label>
+                    <select class="form-control">
+                        @foreach($championnats as $championnat)
                                 <option value="{{ $championnat->id }}">{{ $championnat->libelle }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+                        @endforeach
+                    </select>
 
+                </div>
 
                 <div class="form-group">
                     <button type ="submit" class="btn btn-primary btn-block">Modifier &raquo; </button>

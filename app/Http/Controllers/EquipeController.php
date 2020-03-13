@@ -26,10 +26,9 @@ class EquipeController extends Controller
      */
     public function index(Equipe $equipe)
     {
-        $equipes = Equipe::latest()->paginate(20);
+        $equipes = Equipe::all();
 
-        return view('pages.equipes.index',compact('equipes'))
-            ->with('i', (request()->input('page', 1) - 1) * 20);
+        return view('pages.equipes.index',compact('equipes'));
     }
 
     /**

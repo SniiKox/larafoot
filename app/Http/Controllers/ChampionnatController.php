@@ -26,10 +26,9 @@ class ChampionnatController extends Controller
      */
     public function index()
     {
-        $championnats = Championnat::latest()->paginate(20);
+        $championnats = Championnat::all();
 
-        return view('pages.championnats.index',compact('championnats'))
-            ->with('i', (request()->input('page', 1) - 1) * 20);
+        return view('pages.championnats.index',compact('championnats'));
 
     }
 

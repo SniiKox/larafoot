@@ -48,7 +48,6 @@
         </table>
     </div>
 
-    {!! $championnats->links() !!}
 </div>
 
 @endsection
