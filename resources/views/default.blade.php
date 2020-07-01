@@ -40,6 +40,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('score_path')}}">Score</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('matchs.index')}}">Statistique</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

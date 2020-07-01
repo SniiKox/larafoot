@@ -61,6 +61,12 @@ Route::resource('equipes', 'EquipeController', [
     ]
 ]);
 
+Route::resource('matchs', 'MatchController', [
+    'names' => [
+        'index' => 'matchs.index',
+    ]
+]);
+
 Route::get('/contact', [
     'as' => 'contact_path',
     'uses' => 'ContactController@pageContact'
