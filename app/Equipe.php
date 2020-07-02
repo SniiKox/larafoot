@@ -19,4 +19,9 @@ class Equipe extends Model
     {
         return $this->belongsTo(championnat::class);
     }
+
+    public function matchs()
+    {
+        return $this->hasMany(Match::class);
+    }
 }

@@ -61,7 +61,7 @@ Route::resource('equipes', 'EquipeController', [
     ]
 ]);
 
-Route::resource('matchs', 'MatchController', [
+Route::resource('statistiques', 'MatchController', [
     'names' => [
         'index' => 'matchs.index',
     ]

@@ -14,4 +14,9 @@ class Match extends Model
     protected $fillable = [
         'possession', 'BP', 'BC', 'nb_changement', 'nb_passe', 'nb_tir', 'nb_tir_cadres', 'cleansheet',
     ];
+
+    public function equipe()
+    {
+        return $this->belongsTo(equipe::class);
+    }
 }
