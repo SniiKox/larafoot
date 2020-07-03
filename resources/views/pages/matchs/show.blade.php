@@ -28,7 +28,11 @@
             </div>
             <div class="form-group">
                 <strong>Pourcentage de tirs cadrés :</strong>
-                {{ $pourcentageTirsCadres }} %
+                {{ $pourcentageTirCadres }} %
+            </div>
+            <div class="form-group">
+                <strong>Passe moyenne par match :</strong>
+                {{ $passeMoyenne }} passes par match
             </div>
         </div>
         {{-- <div class="col-xs-12 col-sm-12 col-md-12">

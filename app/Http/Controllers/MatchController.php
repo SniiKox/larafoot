@@ -58,10 +58,12 @@ class MatchController extends Controller
 
         $nb_cleansheet = $this->calculCleansheet($currentEquipe);
 
-        $pourcentageTirCadres = 0;
+        $pourcentageTirCadres = $this->pourcentageTirsCadres($currentEquipe);
+
+        $passeMoyenne = 0;
 
         return view('pages.matchs.show', compact('currentEquipe',
-            'possessionMoyenne', 'totalButPour', 'nb_cleansheet', 'pourcentageTirCadres'));
+            'possessionMoyenne', 'totalButPour', 'nb_cleansheet', 'pourcentageTirCadres', 'passeMoyenne'));
     }
 
 
@@ -93,7 +95,6 @@ class MatchController extends Controller
         $nb_cleansheet = 0;
 
         // On se base sur les buts encaissés par matchs
-        $stats = [0, 1, 2, 5, 3, 4, 0];
 
         foreach ($currentEquipe as $oneMatch) {
 
@@ -104,6 +105,23 @@ class MatchController extends Controller
         }
 
         return $nb_cleansheet;
+    }
+
+    private function pourcentageTirsCadres($currentEquipe) {
+
+        $nb_tir = 0;
+        $nb_tir_cadres = 0;
+
+        foreach ($currentEquipe as $oneMatch) {
+            $nb_tir = $nb_tir + $oneMatch->nb_tir;
+            $nb_tir_cadres = $nb_tir_cadres + $oneMatch->nb_tir_cadres;
+        }
+
+        $pourcentageTirsCadres = ($nb_tir_cadres / $nb_tir)*100;
+
+        $pourcentageTirsCadres = number_format($pourcentageTirsCadres, 2);
+
+        return $pourcentageTirsCadres;
     }
 
 }
