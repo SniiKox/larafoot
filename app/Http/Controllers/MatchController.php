@@ -60,7 +60,7 @@ class MatchController extends Controller
 
         $pourcentageTirCadres = $this->pourcentageTirsCadres($currentEquipe);
 
-        $passeMoyenne = 0;
+        $passeMoyenne = $this->calculPasseMoyenne($currentEquipe);
 
         return view('pages.matchs.show', compact('currentEquipe',
             'possessionMoyenne', 'totalButPour', 'nb_cleansheet', 'pourcentageTirCadres', 'passeMoyenne'));
@@ -122,6 +122,19 @@ class MatchController extends Controller
         $pourcentageTirsCadres = number_format($pourcentageTirsCadres, 2);
 
         return $pourcentageTirsCadres;
+    }
+
+    private function calculPasseMoyenne($currentEquipe)
+    {
+        $nb_passe = 0;
+
+        foreach ($currentEquipe as $oneMatch) {
+		    $nb_passe = $nb_passe + $oneMatch->nb_passe;
+        }
+
+        $nb_passe = number_format($nb_passe / sizeof($currentEquipe), 0);
+
+        return $nb_passe;
     }
 
 }

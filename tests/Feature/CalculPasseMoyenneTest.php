@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class CalculPasseMoyenneTest extends TestCase
 {
     /**
-     * Test permettant de calculer la possession
+     * Test permettant de calculer le nombre de passe en moyenne
      *
      * @return void
      */
@@ -15,8 +15,13 @@ class CalculPasseMoyenneTest extends TestCase
     {
         $nb_passe = 0;
 
-        //on se base sur les buts encaissés par matchs
         $stats = [469, 654, 701, 437, 566, 572, 623];
+
+        foreach ($stats as $oneMatch) {
+		    $nb_passe = $nb_passe + $oneMatch;
+        }
+
+        $nb_passe = number_format($nb_passe / sizeof($stats), 0);
 
         $this->assertEquals($nb_passe, 575);
     }

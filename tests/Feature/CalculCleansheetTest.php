@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class CalculCleansheetTest extends TestCase
 {
     /**
-     * Test permettant de calculer la possession
+     * Test permettant de calculer le nombre de cleansheet effectué par une équipe
      *
      * @return void
      */
