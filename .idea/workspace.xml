@@ -33,12 +33,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="159f277d-71ae-461c-a870-abc3bd177aa6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_02_000000_create_matchs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/CalculPossessionTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Equipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Equipe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Match.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Match.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
