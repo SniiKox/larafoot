@@ -54,6 +54,8 @@ class MatchController extends Controller
 
         $possessionMoyenne = $this->calculPossessionMoyenne($currentEquipe);
 
+        $totalButPour = 0;
+
         return view('pages.matchs.show', compact('currentEquipe', 'possessionMoyenne'));
     }
 
