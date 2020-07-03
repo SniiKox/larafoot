@@ -47,8 +47,6 @@ class MatchController extends Controller
                 ->where('equipe_id', '=', $currentId)
                 ->get();
 
-        var_dump($currentEquipe->toArray());
-        die;
         if(count($currentEquipe) == 0){
             flashy()->error('Désolé, nous ne possèdons aucune statistique pour cette équipe');
             return redirect()->route('matchs.index');
