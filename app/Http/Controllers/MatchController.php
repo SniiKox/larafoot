@@ -7,6 +7,7 @@ use App\Match;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\Constraint\IsEmpty;
+use App\Http\Utils\StatistiquesUtils;
 
 class MatchController extends Controller
 {
@@ -39,7 +40,6 @@ class MatchController extends Controller
      */
     public function statistique(Request $request)
     {
-
         $currentId = $request->input('equipes');
 
         $currentEquipe = DB::table('matchs')
@@ -47,94 +47,28 @@ class MatchController extends Controller
                 ->where('equipe_id', '=', $currentId)
                 ->get();
 
+        var_dump($currentEquipe->toArray());
+        die;
         if(count($currentEquipe) == 0){
             flashy()->error('Désolé, nous ne possèdons aucune statistique pour cette équipe');
             return redirect()->route('matchs.index');
         }
 
-        $possessionMoyenne = $this->calculPossessionMoyenne($currentEquipe);
+        $stats_service = new StatistiquesUtils();
 
-        $totalButPour = $this->calculTotalButPour($currentEquipe);
+        $possessionMoyenne = $stats_service->calculPossessionMoyenne($currentEquipe);
 
-        $nb_cleansheet = $this->calculCleansheet($currentEquipe);
+        $totalButPour = $stats_service->calculTotalButPour($currentEquipe);
 
-        $pourcentageTirCadres = $this->pourcentageTirsCadres($currentEquipe);
+        $nb_cleansheet = $stats_service->calculCleansheet($currentEquipe);
 
-        $passeMoyenne = $this->calculPasseMoyenne($currentEquipe);
+        $pourcentageTirCadres = $stats_service->pourcentageTirsCadres($currentEquipe);
+
+        $passeMoyenne = $stats_service->calculPasseMoyenne($currentEquipe);
+
+
 
         return view('pages.matchs.show', compact('currentEquipe',
             'possessionMoyenne', 'totalButPour', 'nb_cleansheet', 'pourcentageTirCadres', 'passeMoyenne'));
     }
-
-
-    private function calculPossessionMoyenne($currentEquipe)
-    {
-        $possessionMoyenne = 0;
-
-        foreach ($currentEquipe as $oneMatch) {
-		    $possessionMoyenne = $possessionMoyenne + $oneMatch->possession;
-        }
-
-        $possessionMoyenne = $possessionMoyenne / sizeof($currentEquipe);
-
-        return number_format($possessionMoyenne,2);
-    }
-
-    private function calculTotalButPour($currentEquipe)
-    {
-        $nombreButTotal = 0;
-
-        foreach ($currentEquipe as $oneMatch) {
-            $nombreButTotal = $nombreButTotal + $oneMatch->BP;
-        }
-
-        return $nombreButTotal;
-    }
-
-    private function calculCleansheet($currentEquipe) {
-        $nb_cleansheet = 0;
-
-        // On se base sur les buts encaissés par matchs
-
-        foreach ($currentEquipe as $oneMatch) {
-
-            // On regarde si le nombre de but pris est à 0
-            if($oneMatch->BC == 0) {
-                $nb_cleansheet = $nb_cleansheet + 1;
-            }
-        }
-
-        return $nb_cleansheet;
-    }
-
-    private function pourcentageTirsCadres($currentEquipe) {
-
-        $nb_tir = 0;
-        $nb_tir_cadres = 0;
-
-        foreach ($currentEquipe as $oneMatch) {
-            $nb_tir = $nb_tir + $oneMatch->nb_tir;
-            $nb_tir_cadres = $nb_tir_cadres + $oneMatch->nb_tir_cadres;
-        }
-
-        $pourcentageTirsCadres = ($nb_tir_cadres / $nb_tir)*100;
-
-        $pourcentageTirsCadres = number_format($pourcentageTirsCadres, 2);
-
-        return $pourcentageTirsCadres;
-    }
-
-    private function calculPasseMoyenne($currentEquipe)
-    {
-        $nb_passe = 0;
-
-        foreach ($currentEquipe as $oneMatch) {
-		    $nb_passe = $nb_passe + $oneMatch->nb_passe;
-        }
-
-        $nb_passe = number_format($nb_passe / sizeof($currentEquipe), 0);
-
-        return $nb_passe;
-    }
-
 }

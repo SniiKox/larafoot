@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use PHPUnit\Framework\TestCase;
+use App\Http\Utils\StatistiquesUtils;
 
 class CalculPasseMoyenneTest extends TestCase
 {
@@ -13,15 +14,33 @@ class CalculPasseMoyenneTest extends TestCase
      */
     public function testCalculPasseMoyenne()
     {
-        $nb_passe = 0;
+        $stats_service = new StatistiquesUtils();
+        $currentEquipe = array([
+            'nb_passe' => 469
+        ],
+            [
+                'nb_passe' => 654
+            ],
+            [
+                'nb_passe' => 701
+            ],
+            [
+                'nb_passe' => 437
+            ],
+            [
+                'nb_passe' => 566
+            ],
+            [
+                'nb_passe' => 572
+            ],
+            [
+                'nb_passe' => 623
+            ]);
 
-        $stats = [469, 654, 701, 437, 566, 572, 623];
+        $stats = $stats_service->toObjectsArray($currentEquipe);
 
-        foreach ($stats as $oneMatch) {
-		    $nb_passe = $nb_passe + $oneMatch;
-        }
+        $nb_passe = $stats_service->calculPasseMoyenne($stats);
 
-        $nb_passe = number_format($nb_passe / sizeof($stats), 0);
 
         $this->assertEquals($nb_passe, 575);
     }

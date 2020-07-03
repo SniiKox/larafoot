@@ -33,11 +33,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="159f277d-71ae-461c-a870-abc3bd177aa6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/CalculPasseMoyenneTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Utils/StatistiquesUtils.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/matchs/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/matchs/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CalculCleansheetTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CalculCleansheetTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CalculPasseMoyenneTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CalculPasseMoyenneTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CalculPossessionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CalculPossessionTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/CalculPourcentageTirsCadresTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CalculPourcentageTirsCadresTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CalculTotalButPourTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CalculTotalButPourTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,9 +225,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="470" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1593767307658" />
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593615498349">
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593783791818">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1593615498349" />
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1593783791818" />
   </component>
 </project>

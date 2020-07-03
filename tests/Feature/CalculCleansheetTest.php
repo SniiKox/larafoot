@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use PHPUnit\Framework\TestCase;
+use App\Http\Utils\StatistiquesUtils;
 
 class CalculCleansheetTest extends TestCase
 {
@@ -11,19 +12,22 @@ class CalculCleansheetTest extends TestCase
      *
      * @return void
      */
-    public function testCalculCleansheet() {
-        $nb_cleansheet = 0;
+    public function testCalculCleansheet()
+    {
+        $stats_service = new StatistiquesUtils();
+        $currentEquipe = array([
+            'BC' => 1
+        ],
+        [
+            'BC' => 0
+        ],
+        [
+            'BC' => 0
+        ]);
 
-        // On se base sur les buts encaissés par matchs
-        $stats = [0, 1, 2, 5, 3, 4, 0];
+        $stats = $stats_service->toObjectsArray($currentEquipe);
 
-        foreach ($stats as $oneMatch) {
-
-            // On regarde si le nombre de but pris est à 0
-            if($oneMatch == 0) {
-                $nb_cleansheet = $nb_cleansheet + 1;
-            }
-        }
+        $nb_cleansheet = $stats_service->calculCleansheet($stats);
 
         $this->assertEquals($nb_cleansheet, 2);
     }

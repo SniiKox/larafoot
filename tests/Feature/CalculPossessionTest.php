@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Http\Utils\StatistiquesUtils;
 use PHPUnit\Framework\TestCase;
 
 class CalculPossessionTest extends TestCase
@@ -13,17 +14,17 @@ class CalculPossessionTest extends TestCase
      */
     public function testCalculPossessionMoyenne()
     {
-        $possessionMoyenne = 0;
+        $stats_service = new StatistiquesUtils();
+        $currentEquipe = array([
+            'possession' => 50
+        ],
+            [
+                'possession' => 60
+            ]);
 
-        $stats = [50,60];
+        $stats = $stats_service->toObjectsArray($currentEquipe);
 
-        foreach ($stats as $oneMatch) {
-		    $possessionMoyenne = $possessionMoyenne + $oneMatch;
-        }
-
-        $possessionMoyenne = $possessionMoyenne / sizeof($stats);
-
-        $possessionMoyenne = number_format($possessionMoyenne,2);
+        $possessionMoyenne = $stats_service->calculPossessionMoyenne($stats);
 
         $this->assertEquals($possessionMoyenne, 55.00);
     }

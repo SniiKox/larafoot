@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Http\Utils\StatistiquesUtils;
 use PHPUnit\Framework\TestCase;
 
 class CalculTotalButPourTest extends TestCase
@@ -13,13 +14,36 @@ class CalculTotalButPourTest extends TestCase
      */
     public function testCalculTotalButPour()
     {
-        $nombreButTotal = 0;
+        $stats_service = new StatistiquesUtils();
+        $currentEquipe = array([
+            'BP' => 5
+        ],
+            [
+                'BP' => 0
+            ],
+            [
+                'BP' => 3
+            ],
+            [
+                'BP' => 5
+            ],
+            [
+                'BP' => 2
+            ],
+            [
+                'BP' => 1
+            ],
+            [
+                'BP' => 1
+            ],
+            [
+                'BP' => 3
+            ]
+        );
 
-        $stats = [5,0,3,5,2,1,1,3];
+        $stats = $stats_service->toObjectsArray($currentEquipe);
 
-        foreach ($stats as $oneMatch) {
-            $nombreButTotal = $nombreButTotal + $oneMatch;
-        }
+        $nombreButTotal = $stats_service->calculTotalButPour($stats);
 
         $this->assertEquals($nombreButTotal, 20);
     }
