@@ -67,14 +67,11 @@ Route::resource('statistiques', 'MatchController', [
     ]
 ]);
 
+Route::post('statistique', 'MatchController@statistique');
+
 Route::get('/contact', [
     'as' => 'contact_path',
     'uses' => 'ContactController@pageContact'
-]);
-
-Route::post('/contact', [
-    'as' => 'contact_path',
-    'uses' => 'ContactController@store'
 ]);
 
 Route::get('/test-email', function(){
