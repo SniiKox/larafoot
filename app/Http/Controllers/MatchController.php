@@ -52,9 +52,23 @@ class MatchController extends Controller
             return redirect()->route('matchs.index');
         }
 
-       $possessionMoyenne = 0;
+        $possessionMoyenne = $this->calculPossessionMoyenne($currentEquipe);
 
         return view('pages.matchs.show', compact('currentEquipe', 'possessionMoyenne'));
+    }
+
+
+    private function calculPossessionMoyenne($currentEquipe)
+    {
+        $possessionMoyenne = 0;
+
+        foreach ($currentEquipe as $oneMatch) {
+		    $possessionMoyenne = $possessionMoyenne + $oneMatch->possession;
+        }
+
+        $possessionMoyenne = $possessionMoyenne / sizeof($currentEquipe);
+
+        return number_format($possessionMoyenne,2);
     }
 
 }

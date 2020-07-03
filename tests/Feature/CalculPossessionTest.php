@@ -13,8 +13,18 @@ class CalculPossessionTest extends TestCase
      */
     public function testCalculPossessionMoyenne()
     {
-        $stats = [50,60];
         $possessionMoyenne = 0;
+
+        $stats = [50,60];
+
+        foreach ($stats as $oneMatch) {
+		    $possessionMoyenne = $possessionMoyenne + $oneMatch;
+        }
+
+        $possessionMoyenne = $possessionMoyenne / sizeof($stats);
+
+        $possessionMoyenne = number_format($possessionMoyenne,2);
+
         $this->assertEquals($possessionMoyenne, 55.00);
     }
 }
