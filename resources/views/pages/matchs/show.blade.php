@@ -18,6 +18,14 @@
                 <strong>Possession :</strong>
                 {{ $possessionMoyenne }} %
             </div>
+            <div class="form-group">
+                <strong>BP :</strong>
+                {{ $totalButPour }} Buts marqués
+            </div>
+            <div class="form-group">
+                <strong>Cleansheet :</strong>
+                {{ $nb_cleansheet }} matchs sans encaisser de but
+            </div>
         </div>
         {{-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

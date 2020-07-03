@@ -54,9 +54,12 @@ class MatchController extends Controller
 
         $possessionMoyenne = $this->calculPossessionMoyenne($currentEquipe);
 
-        $totalButPour = 0;
+        $totalButPour = $this->calculTotalButPour($currentEquipe);
 
-        return view('pages.matchs.show', compact('currentEquipe', 'possessionMoyenne'));
+        $nb_cleansheet = 0;
+
+        return view('pages.matchs.show', compact('currentEquipe',
+            'possessionMoyenne', 'totalButPour', 'nb_cleansheet'));
     }
 
 
@@ -71,6 +74,17 @@ class MatchController extends Controller
         $possessionMoyenne = $possessionMoyenne / sizeof($currentEquipe);
 
         return number_format($possessionMoyenne,2);
+    }
+
+    private function calculTotalButPour($currentEquipe)
+    {
+        $nombreButTotal = 0;
+
+        foreach ($currentEquipe as $oneMatch) {
+            $nombreButTotal = $nombreButTotal + $oneMatch->BP;
+        }
+
+        return $nombreButTotal;
     }
 
 }

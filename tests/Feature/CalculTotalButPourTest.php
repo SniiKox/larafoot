@@ -17,6 +17,10 @@ class CalculTotalButPourTest extends TestCase
 
         $stats = [5,0,3,5,2,1,1,3];
 
+        foreach ($stats as $oneMatch) {
+            $nombreButTotal = $nombreButTotal + $oneMatch;
+        }
+
         $this->assertEquals($nombreButTotal, 20);
     }
 }
