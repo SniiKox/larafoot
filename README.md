@@ -11,10 +11,13 @@
 
 ## A venir
 
-La relation avec une BDD et l'incorporation d'un ORM !! 
+Développement en mode TDD et ajout de TU ! 
 
 ## Produit par
 
 + CHARPENTIER Guillaume - SniiKox
 + FOURRIER Clément - fourrierc
 + HUCHET Adrien - adrienhuchet
+
+## Pour Nicolas M.
+N'hésites pas à regarder les commentaires des commits que l'on a utilisé pour "communiquer"
