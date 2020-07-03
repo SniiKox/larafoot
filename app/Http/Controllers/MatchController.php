@@ -56,10 +56,12 @@ class MatchController extends Controller
 
         $totalButPour = $this->calculTotalButPour($currentEquipe);
 
-        $nb_cleansheet = 0;
+        $nb_cleansheet = $this->calculCleansheet($currentEquipe);
+
+        $pourcentageTirCadres = 0;
 
         return view('pages.matchs.show', compact('currentEquipe',
-            'possessionMoyenne', 'totalButPour', 'nb_cleansheet'));
+            'possessionMoyenne', 'totalButPour', 'nb_cleansheet', 'pourcentageTirCadres'));
     }
 
 
@@ -85,6 +87,23 @@ class MatchController extends Controller
         }
 
         return $nombreButTotal;
+    }
+
+    private function calculCleansheet($currentEquipe) {
+        $nb_cleansheet = 0;
+
+        // On se base sur les buts encaissés par matchs
+        $stats = [0, 1, 2, 5, 3, 4, 0];
+
+        foreach ($currentEquipe as $oneMatch) {
+
+            // On regarde si le nombre de but pris est à 0
+            if($oneMatch->BC == 0) {
+                $nb_cleansheet = $nb_cleansheet + 1;
+            }
+        }
+
+        return $nb_cleansheet;
     }
 
 }

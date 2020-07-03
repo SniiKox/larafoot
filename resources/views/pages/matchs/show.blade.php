@@ -26,6 +26,10 @@
                 <strong>Cleansheet :</strong>
                 {{ $nb_cleansheet }} matchs sans encaisser de but
             </div>
+            <div class="form-group">
+                <strong>Pourcentage de tirs cadrés :</strong>
+                {{ $pourcentageTirsCadres }} %
+            </div>
         </div>
         {{-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

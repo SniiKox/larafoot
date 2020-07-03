@@ -11,12 +11,19 @@ class CalculCleansheetTest extends TestCase
      *
      * @return void
      */
-    public function testCalculCleansheet()
-    {
+    public function testCalculCleansheet() {
         $nb_cleansheet = 0;
 
-        //on se base sur les buts encaissés par matchs
+        // On se base sur les buts encaissés par matchs
         $stats = [0, 1, 2, 5, 3, 4, 0];
+
+        foreach ($stats as $oneMatch) {
+
+            // On regarde si le nombre de but pris est à 0
+            if($oneMatch == 0) {
+                $nb_cleansheet = $nb_cleansheet + 1;
+            }
+        }
 
         $this->assertEquals($nb_cleansheet, 2);
     }
